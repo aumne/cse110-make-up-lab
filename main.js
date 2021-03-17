@@ -11,7 +11,7 @@ function increment_input(event) {
 
 //test console.log()
 const log_ = document.getElementById('log-btn');
-log_.addEventListener('submit', test_log);
+log_.addEventListener('onclick', test_log);
 function test_log(event) {
     event.preventDefault();
     console.log(`${input.value} is a good value`);
@@ -19,7 +19,7 @@ function test_log(event) {
 
 //test console.error()
 const error_ = document.getElementById('error-btn');
-error_.addEventListener('submit', test_error);
+error_.addEventListener('onclick', test_error);
 function test_error(event) {
     event.preventDefault();
     console.error(`${input.value} is a bad value`);
@@ -27,7 +27,7 @@ function test_error(event) {
 
 //test console.table()
 const table_ = document.getElementById('table-btn');
-table_.addEventListener('submit', test_table);
+table_.addEventListener('onclick', test_table);
 function test_table(event) {
     event.preventDefault();
     const table_data = [
@@ -39,7 +39,7 @@ function test_table(event) {
 
 //test console.dir()
 const dir_ = document.getElementById('dir-btn');
-dir_.addEventListener('submit', test_dir);
+dir_.addEventListener('onclick', test_dir);
 function test_dir(event) {
     event.preventDefault();
     console.table(dir_);
@@ -47,7 +47,7 @@ function test_dir(event) {
 
 //test console.dirxml()
 const dirxml_ = document.getElementById('dirxml-btn');
-dirxml_.addEventListener('submit', test_dirxml);
+dirxml_.addEventListener('onclick', test_dirxml);
 function test_dirxml(event) {
     event.preventDefault();
     console.table(document.body);
@@ -55,7 +55,7 @@ function test_dirxml(event) {
 
 //test console.group()
 const group_start = document.getElementById('group-start-btn');
-group_start.addEventListener('submit', test_group_start);
+group_start.addEventListener('onclick', test_group_start);
 function test_group_start(event) {
     event.preventDefault();
     console.group('Console Group');
@@ -63,7 +63,7 @@ function test_group_start(event) {
 
 //test console.groupEnd()
 const group_end = document.getElementById('group-end-btn');
-group_end.addEventListener('submit', test_group_end);
+group_end.addEventListener('onclick', test_group_end);
 function test_group_end(event) {
     event.preventDefault();
     console.groupEnd('Console Group');
@@ -71,7 +71,7 @@ function test_group_end(event) {
 
 //test console.time()
 const time_start = document.getElementById('time-start-btn');
-time_start.addEventListener('submit', test_time_start);
+time_start.addEventListener('onclick', test_time_start);
 function test_time_start(event) {
     event.preventDefault();
     console.time();
@@ -79,7 +79,7 @@ function test_time_start(event) {
 
 //test console.timeEnd()
 const time_end = document.getElementById('time-end-btn');
-time_end.addEventListener('submit', test_time_end);
+time_end.addEventListener('onclick', test_time_end);
 function test_time_end(event) {
     event.preventDefault();
     console.timeEnd();
@@ -87,7 +87,7 @@ function test_time_end(event) {
 
 //test console.trace()
 const trace_ = document.getElementById('trace-btn');
-trace_.addEventListener('submit', test_trace);
+trace_.addEventListener('onclick', test_trace);
 function test_trace(event) {
     event.preventDefault();
     const tic = () => { tac(); };
