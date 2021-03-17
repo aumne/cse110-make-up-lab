@@ -30,9 +30,10 @@ const table_ = document.getElementById('table-btn');
 table_.addEventListener('click', test_table);
 function test_table(event) {
     event.preventDefault();
+    const input_num = Number(input.value)
     const table_data = [
         {name: 'default input', input: 0, output: 1},
-        {name: 'current input', input: input.value, output: Number(input.value) + 1},
+        {name: 'current input', input: input_num, output: input_num + 1},
     ];
     console.table(table_data);
 }
@@ -42,7 +43,7 @@ const dir_ = document.getElementById('dir-btn');
 dir_.addEventListener('click', test_dir);
 function test_dir(event) {
     event.preventDefault();
-    console.table(dir_);
+    console.dir(dir_);
 }
 
 //test console.dirxml()
@@ -50,7 +51,7 @@ const dirxml_ = document.getElementById('dirxml-btn');
 dirxml_.addEventListener('click', test_dirxml);
 function test_dirxml(event) {
     event.preventDefault();
-    console.table(document.body);
+    console.dirxml(document.body);
 }
 
 //test console.group()
