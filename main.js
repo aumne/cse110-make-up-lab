@@ -7,5 +7,5 @@ input_form.addEventListener('submit', increment_input);
 function increment_input(event) {
     event.preventDefault();
     //TODO error handling
-    output.textContent = input.value++;
+    output.textContent = `Result: ${++input.value}`;
 }
