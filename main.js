@@ -6,7 +6,6 @@ class IntegerInputError extends Error {
     }
 }
 
-
 const input_form = document.getElementById('submission-form');
 
 //submit form
@@ -18,7 +17,7 @@ function increment_input(event) {
     try {
         let input_value = input.value;
 
-        if (!input_value.isInteger()) {
+        if (!Number.isInteger(input_value)) {
             throw new IntegerInputError('Integer input required but not given.');
         }
 
