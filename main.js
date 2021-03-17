@@ -1,3 +1,5 @@
+const input_form = document.getElementById('submission-form');
+
 const input = document.getElementById('number_input');
 const output = document.getElementById('number_output');
 
