@@ -1,3 +1,12 @@
+class IntegerInputError extends Error {
+    constructor(input) {
+        super(`Integer input required but not given; input was: ${input}`);
+        this.name = 'IntegerError';
+        this.input = input;
+    }
+}
+
+
 const input_form = document.getElementById('submission-form');
 
 //submit form
@@ -6,7 +15,21 @@ const output = document.getElementById('number_output');
 input_form.addEventListener('submit', increment_input);
 function increment_input(event) {
     event.preventDefault();
-    output.textContent = `Result: ${++input.value}`;
+    try {
+        let input_value = input.value;
+
+        if (!input_value.isInteger()) {
+            throw new IntegerInputError('Integer input required but not given.');
+        }
+
+        output.textContent = `Result: ${++input.value}`;
+    } catch (err) {
+        alert(`Error: ${err.message}`);
+
+        output.textContent = `Bad input`;
+    } finally {
+        console.log(input_value);
+    }
 }
 
 //test console.log()
