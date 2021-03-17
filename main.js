@@ -1,11 +1,97 @@
 const input_form = document.getElementById('submission-form');
 
+//submit form
 const input = document.getElementById('number_input');
 const output = document.getElementById('number_output');
-
 input_form.addEventListener('submit', increment_input);
 function increment_input(event) {
     event.preventDefault();
-    //TODO error handling
     output.textContent = `Result: ${++input.value}`;
+}
+
+//test console.log()
+const log_ = document.getElementById('log-btn');
+log_.addEventListener('submit', test_log);
+function test_log(event) {
+    event.preventDefault();
+    console.log(`${input.value} is a good value`);
+}
+
+//test console.error()
+const error_ = document.getElementById('error-btn');
+error_.addEventListener('submit', test_error);
+function test_error(event) {
+    event.preventDefault();
+    console.error(`${input.value} is a bad value`);
+}
+
+//test console.table()
+const table_ = document.getElementById('table-btn');
+table_.addEventListener('submit', test_table);
+function test_table(event) {
+    event.preventDefault();
+    const table_data = [
+        {name: 'default input', input: 0, output: 1},
+        {name: 'current input', input: input.value, output: Number(input.value) + 1},
+    ];
+    console.table(table_data);
+}
+
+//test console.dir()
+const dir_ = document.getElementById('dir-btn');
+dir_.addEventListener('submit', test_dir);
+function test_dir(event) {
+    event.preventDefault();
+    console.table(dir_);
+}
+
+//test console.dirxml()
+const dirxml_ = document.getElementById('dirxml-btn');
+dirxml_.addEventListener('submit', test_dirxml);
+function test_dirxml(event) {
+    event.preventDefault();
+    console.table(document.body);
+}
+
+//test console.group()
+const group_start = document.getElementById('group-start-btn');
+group_start.addEventListener('submit', test_group_start);
+function test_group_start(event) {
+    event.preventDefault();
+    console.group('Console Group');
+}
+
+//test console.groupEnd()
+const group_end = document.getElementById('group-end-btn');
+group_end.addEventListener('submit', test_group_end);
+function test_group_end(event) {
+    event.preventDefault();
+    console.groupEnd('Console Group');
+}
+
+//test console.time()
+const time_start = document.getElementById('time-start-btn');
+time_start.addEventListener('submit', test_time_start);
+function test_time_start(event) {
+    event.preventDefault();
+    console.time();
+}
+
+//test console.timeEnd()
+const time_end = document.getElementById('time-end-btn');
+time_end.addEventListener('submit', test_time_end);
+function test_time_end(event) {
+    event.preventDefault();
+    console.timeEnd();
+}
+
+//test console.trace()
+const trace_ = document.getElementById('trace-btn');
+trace_.addEventListener('submit', test_trace);
+function test_trace(event) {
+    event.preventDefault();
+    const tic = () => { tac(); };
+    const tac = () => { toe(); };
+    const toe = () => { console.trace(); };
+    tic();
 }
