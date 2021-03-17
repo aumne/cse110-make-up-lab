@@ -75,6 +75,7 @@ const time_start = document.getElementById('time-start-btn');
 time_start.addEventListener('click', test_time_start);
 function test_time_start(event) {
     event.preventDefault();
+    console.log('Started timer.');
     console.time();
 }
 
@@ -83,6 +84,7 @@ const time_end = document.getElementById('time-end-btn');
 time_end.addEventListener('click', test_time_end);
 function test_time_end(event) {
     event.preventDefault();
+    console.log('Ended timer.');
     console.timeEnd();
 }
 
