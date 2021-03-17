@@ -15,7 +15,7 @@ input_form.addEventListener('submit', increment_input);
 function increment_input(event) {
     event.preventDefault();
     try {
-        if (isNan(input.value) || !Number.isInteger(Number(input.value))) {
+        if (isNaN(input.value) || !Number.isInteger(Number(input.value))) {
             throw new IntegerInputError(input.value);
         }
         output.textContent = `Result: ${++input.value}`;
