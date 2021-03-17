@@ -4,6 +4,12 @@
         <meta charset='UTF-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <title>CSE110 Make-up Lab</title>
+        <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+        <script>
+            window.TrackJS && TrackJS.install ({ 
+                token: "5131bdcf0c974a99b9dce228d406d9f1"
+            });
+        </script>
     </head>
   
     <body>
@@ -15,19 +21,20 @@
                 <input type='submit' value='Submit'>
             </fieldset>
             <p id='number_output'></p>
+            <div id='buttons-container'>
+                <button id='log-btn' type='button'>Test console.log()</button>
+                <button id='error-btn' type='button'>Test console.error()</button>
+                <button id='table-btn' type='button'>Test console.table()</button>
+                <button id='dir-btn' type='button'>Test console.dir()</button>
+                <button id='dirxml-btn' type='button'>Test console.dirxml()</button>
+                <button id='group-start-btn' type='button'>Test console.group()</button>
+                <button id='group-end-btn' type='button'>Test console.groupEnd()</button>
+                <button id='time-start-btn' type='button'>Test console.time()</button>
+                <button id='time-end-btn' type='button'>Test console.timeEnd()</button>
+                <button id='trace-btn' type='button'>Test console.trace()</button>
+                <button id='global-error-btn' type='button'>Test global error</button>
+            </div>
         </form>
-        <div id='buttons-container'>
-            <button id='log-btn' type='button'>Test console.log()</button>
-            <button id='error-btn' type='button'>Test console.error()</button>
-            <button id='table-btn' type='button'>Test console.table()</button>
-            <button id='dir-btn' type='button'>Test console.dir()</button>
-            <button id='dirxml-btn' type='button'>Test console.dirxml()</button>
-            <button id='group-start-btn' type='button'>Test console.group()</button>
-            <button id='group-end-btn' type='button'>Test console.groupEnd()</button>
-            <button id='time-start-btn' type='button'>Test console.time()</button>
-            <button id='time-end-btn' type='button'>Test console.timeEnd()</button>
-            <button id='trace-btn' type='button'>Test console.trace()</button>
-        </div>
         <script src='main.js'></script>
     </body>
   

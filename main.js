@@ -116,3 +116,16 @@ function test_trace(event) {
     const toe = () => { console.trace(); };
     tic();
 }
+
+//test global error
+const global_error_ = document.getElementById('global-error-btn');
+global_error_.addEventListener('click', test_global_error);
+function test_global_error(event) {
+    event.preventDefault();
+    bad_code('bad_code');
+}
+
+//catch global errors
+window.onerror = function(message, source, line_num, column_num, error) {
+    console.log(`Error: ${message}; Source: ${source}; Line: ${line_num}; Column: ${column_num}; Stack trace: ${error}`);
+}
