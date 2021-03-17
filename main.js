@@ -1,8 +1,8 @@
 class IntegerInputError extends Error {
-    constructor(input) {
-        super(`Integer input required but not given; input was: ${input}`);
+    constructor(bad_input) {
+        super(`Integer input required but not given; input was: ${bad_input}`);
         this.name = 'IntegerError';
-        this.input = input;
+        this.bad_input = bad_input;
     }
 }
 
@@ -15,19 +15,15 @@ input_form.addEventListener('submit', increment_input);
 function increment_input(event) {
     event.preventDefault();
     try {
-        let input_value = input.value;
-
-        if (!Number.isInteger(input_value)) {
-            throw new IntegerInputError('Integer input required but not given.');
+        if (!Number.isInteger(input.value)) {
+            throw new IntegerInputError(input.value);
         }
-
         output.textContent = `Result: ${++input.value}`;
     } catch (err) {
         alert(`Error: ${err.message}`);
-
         output.textContent = `Bad input`;
     } finally {
-        console.log(input_value);
+        console.log(input.value);
     }
 }
 
@@ -52,7 +48,7 @@ const table_ = document.getElementById('table-btn');
 table_.addEventListener('click', test_table);
 function test_table(event) {
     event.preventDefault();
-    const input_num = Number(input.value)
+    const input_num = Number(input.value);
     const table_data = [
         {name: 'default input', input: 0, output: 1},
         {name: 'current input', input: input_num, output: input_num + 1},
